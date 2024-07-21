@@ -7,6 +7,8 @@ class NPLinear:
         self.o_dim = o_dim
         self.use_bias = use_bias
         self.init = init
+        self.W_grad = 0.0
+        self.b_grad = 0.0
 
         if init == "rand":
             self.W = np.random.random((o_dim, i_dim))
@@ -27,6 +29,10 @@ class NPLinear:
 
     def backward(self, x):
         return self.W.T @ x
+    
+    def flush(self):
+        self.W_grad = 0.0
+        self.b_grad = 0.0
 
 
 class Sigmoid:

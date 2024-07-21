@@ -23,7 +23,7 @@ Exploring and implementing state-of-the-art techniques to optimize different typ
 
 1. Image Classifier (MLP)
   - [ ] Pruning
-    - [ ] Magnitude-based pruning
+    - [x] Magnitude-based pruning
     - [ ] Iterative pruning
     - [ ] Structured pruning (neuron-level)
   - [ ] Quantization
