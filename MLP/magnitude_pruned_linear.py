@@ -120,3 +120,13 @@ print(f'Input: {x}')
 print(f'True: {y}')
 print(f'Predicted: {y_hat}')
 print(f'Loss: {np.sum((y - y_hat) ** 2)}')
+print()
+
+# Count all nulled weights/biases -> These could logically be removed
+nulled_ws = 0
+for i, layer in enumerate(layers):
+    for pos in np.argwhere(layer.W == 0):
+        print(f'Weight Entry Nulled in Layer {i} at position {tuple(pos)}')
+        nulled_ws += 1
+
+print(f'A total of {nulled_ws} weights got turned off.')
